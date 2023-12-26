@@ -2,7 +2,8 @@
 Utilized the SiGploit framework to conduct comprehensive SS7 testing, including SMS interception, phishing mail (fraud), and location tracking attacks, enhancing understanding and awareness of telecom security vulnerabilities.
 
 # **SiGploit**
-SiGploit is a comprehensive signaling security testing framework designed for Telecom Security professionals and researchers. Its primary focus is on penetration testing and exploiting vulnerabilities in signaling protocols used by mobile operators across generations. SiGploit covers various protocols, including SS7, GTP (3G), Diameter (4G), and SIP for IMS and VoLTE infrastructures. It also addresses SS7 message encapsulation into SIP-T. The framework provides recommendations for each vulnerability, offering guidance to testers and operators on steps to enhance their security posture.
+SiGploit is a comprehensive signaling security testing framework designed for Telecom Security professionals and researchers. Its primary focus is on penetration testing and exploiting vulnerabilities in signaling protocols used by mobile operators across generations.<br> 
+SiGploit covers various protocols, including SS7, GTP (3G), Diameter (4G), and SIP for IMS and VoLTE infrastructures. It also addresses SS7 message encapsulation into SIP-T. The framework provides recommendations for each vulnerability, offering guidance to testers and operators on steps to enhance their security posture.
 
 # **SS7**
 SiGploit begins by targeting SS7 vulnerabilities, offering messages to test scenarios such as:
