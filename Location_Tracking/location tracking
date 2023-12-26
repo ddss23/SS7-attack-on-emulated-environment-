@@ -10,6 +10,11 @@ cd AnyTimeInterrogation_Server
 
 cat README_Instructions # this stimulates the HLR and sample response in this case, and contains the hard coded values for the emulated environment so that we can run an attack
 
+# You need to add the ip address to the terminal machine to launnch the attack
+
+sudo ip address add 192.168.56.101/32 dev lo
+sudo ip address add 192.168.56.102/32 dev lo
+
 # Run the java file to initiate the SCTP stack.
 
 sudo java -jar AnyTimeInterrogation.jar
