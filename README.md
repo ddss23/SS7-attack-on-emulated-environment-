@@ -7,9 +7,11 @@ SiGploit is a comprehensive signaling security testing framework designed for Te
 # **SS7**
 SiGploit begins by targeting SS7 vulnerabilities, offering messages to test scenarios such as:
 
-A: Location Tracking__
-B: Call and SMS Interception__
-C: Fraud__
+A: Location Tracking
+
+B: Call and SMS Interception
+
+C: Fraud
 
 Note: To perform SS7 attacks, SS7 access is required, or testing can be done in a virtual lab using the provided server-side components for attacks.
 
